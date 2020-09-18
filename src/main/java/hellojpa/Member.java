@@ -1,16 +1,13 @@
 package hellojpa;
 
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
 
 @Entity
 public class Member {
 
     @Id @GeneratedValue
     @Column(name = "MEMBER_ID")
-    private String id;
+    private Long id;
 
     @Column(name = "USER_NAME")
     private String username;
@@ -19,11 +16,11 @@ public class Member {
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
